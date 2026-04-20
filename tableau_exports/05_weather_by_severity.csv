@@ -1,0 +1,19 @@
+Weather_Group,Severity_Group,Accident_Count
+Clear,Mild (1-2),53376
+Clear,Severe (3-4),34978
+Haze,Mild (1-2),1653
+Haze,Severe (3-4),1460
+Light Rain,Mild (1-2),3176
+Light Rain,Severe (3-4),2509
+Missing,Mild (1-2),1436
+Missing,Severe (3-4),1159
+Mostly Cloudy,Mild (1-2),11369
+Mostly Cloudy,Severe (3-4),8994
+Other,Mild (1-2),3765
+Other,Severe (3-4),2602
+Overcast,Mild (1-2),13309
+Overcast,Severe (3-4),8855
+Partly Cloudy,Mild (1-2),8898
+Partly Cloudy,Severe (3-4),7218
+Scattered Clouds,Mild (1-2),8568
+Scattered Clouds,Severe (3-4),6675

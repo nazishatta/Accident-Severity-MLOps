@@ -1,0 +1,7 @@
+Day_Night,Severity_Group,Accident_Count
+Day,Mild (1-2),73926
+Day,Severe (3-4),49576
+Night,Mild (1-2),31611
+Night,Severe (3-4),24873
+Unknown,Mild (1-2),13
+Unknown,Severe (3-4),1
