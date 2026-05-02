@@ -1,6 +1,6 @@
-# 🚗 US Accident Severity Prediction (2016–2023)
+#  US Accident Severity Prediction (2016–2023)
 
-## 📌 Overview
+##  Overview
 This project predicts the severity of US traffic accidents using machine learning models trained on a dataset of **7.7 million records** collected between 2016 and 2023.
 
 **Course:** DATS 6202 - Machine Learning I  
@@ -10,7 +10,7 @@ This project predicts the severity of US traffic accidents using machine learnin
 
 ---
 
-## 📂 Dataset
+##  Dataset
 - **Source:** [US Accidents Dataset – Kaggle](https://www.kaggle.com/datasets/sobhanmoosavi/us-accidents)
 - **Size:** 7,728,394 rows × 46 columns
 - **Target Variable:** `Severity` (1 = least severe → 4 = most severe)
@@ -42,18 +42,18 @@ This project predicts the severity of US traffic accidents using machine learnin
 
 ---
 
-## 🤖 Models Trained
+##  Models Trained
 
 | Model | Weighted F1 | Train Time | Sample Size |
 |---|---|---|---|
 | Logistic Regression | 0.5192 | 8.4s | 100,000 |
 | Random Forest | 0.7589 | 217.6s | 100,000 |
-| **LightGBM** ✅ | **0.7595** | 646.3s | 500,000 |
+| **LightGBM**  | **0.7595** | 646.3s | 500,000 |
 | MLP Neural Network | 0.7429 | 108.9s | 100,000 |
 
 ---
 
-## 🏆 Best Model: LightGBM
+##  Best Model: LightGBM
 - **Weighted F1-Score: 0.7595**
 - Best parameters: `learning_rate=0.1`, `num_leaves=63`
 - Strongest performance across all severity classes
@@ -61,7 +61,7 @@ This project predicts the severity of US traffic accidents using machine learnin
 
 ---
 
-## 📊 Key Findings
+##  Key Findings
 - Severity 2 accounts for **79.67%** of all accidents (heavy class imbalance)
 - Most accidents occur during **morning and evening rush hours**
 - **California, Florida, and Texas** have the highest accident counts
@@ -69,7 +69,7 @@ This project predicts the severity of US traffic accidents using machine learnin
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 - Python, Pandas, NumPy
 - Scikit-learn, LightGBM
 - Matplotlib, Seaborn
@@ -77,4 +77,4 @@ This project predicts the severity of US traffic accidents using machine learnin
 
 ---
 
-## 📁 Repository Structure
+##  Repository Structure
