@@ -1,8 +1,0 @@
-documents_private/
-.idea/
-__pycache__/
-.DS_Store
-*.pyc
-.venv/
-mlruns/
-claude.md
