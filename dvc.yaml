@@ -10,3 +10,12 @@ stages:
       - data.random_state
     outs:
       - data/processed/cleaned_accidents.csv
+
+  register_model:
+    cmd: python src/register_model.py
+    deps:
+      - src/register_model.py
+      - params.yaml
+    params:
+      - registry.promotion_metric
+      - registry.promotion_threshold
