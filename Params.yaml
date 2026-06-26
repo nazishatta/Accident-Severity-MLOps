@@ -6,22 +6,18 @@ data:
 train:
   random_state: 42
   class_weight: balanced
-
   logistic_regression:
     C: [0.1, 1]
     solver: lbfgs
     max_iter: 500
-
   random_forest:
     n_estimators: [100, 200]
     max_depth: [10, 15]
-
   lightgbm:
     n_estimators: 200
     max_depth: 6
     learning_rate: [0.05, 0.1]
     num_leaves: [31, 63]
-
   mlp:
     hidden_layer_sizes: [128, 64]
     activation: relu
@@ -29,3 +25,7 @@ train:
     max_iter: 30
     early_stopping: true
     validation_fraction: 0.1
+
+registry:
+  promotion_metric: weighted_f1
+  promotion_threshold: 0.75
