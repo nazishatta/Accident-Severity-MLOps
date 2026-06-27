@@ -13,10 +13,16 @@ short_description: 'ML-powered API and interactive demo predicting U.S. traffic 
 
 # U.S. Accident Severity Prediction Using Machine Learning
 
+**[Live Demo: Try the deployed model here](https://huggingface.co/spaces/Nazishatta/accident-severity-mlops)**
+
+
+**[Live Demo: Try the deployed model here](https://huggingface.co/spaces/Nazishatta/accident-severity-mlops)**
+
+
 An end-to-end machine learning study for predicting the severity of traffic accidents in the United States using historical accident, weather, location, road-infrastructure, and time-based features.
 
 > **Project status:** Research and academic prototype  
-> **Course:** DATS 6202-10 Ã¢â‚¬â€ Machine Learning I, Spring 2026  
+> **Course:** DATS 6202-10 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Machine Learning I, Spring 2026  
 > **Institution:** George Washington University
 
 ---
@@ -25,7 +31,7 @@ An end-to-end machine learning study for predicting the severity of traffic acci
 ## Production MLOps Deployment
 
 This research project has since been extended into a fully deployed, production-style MLOps
-pipeline, built independently as a follow-on to the original coursework above.
+pipeline, built independently by Nazish Atta as a solo follow-on project. The original modeling work above (Logistic Regression, Random Forest, LightGBM, MLP comparison) was a team effort; the MLOps pipeline, deployment, and automation described below were designed and built independently.
 
 **[Live Demo: Try the model here](https://huggingface.co/spaces/Nazishatta/accident-severity-mlops)**
 
@@ -94,7 +100,7 @@ The final comparison includes Logistic Regression, Random Forest, LightGBM, and 
 
 ## Problem Statement
 
-Given the recorded conditions of a traffic accidentÃ¢â‚¬â€including location, time, weather, road characteristics, and related contextual variablesÃ¢â‚¬â€predict its reported severity class.
+Given the recorded conditions of a traffic accidentÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Âincluding location, time, weather, road characteristics, and related contextual variablesÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Âpredict its reported severity class.
 
 The target variable contains four severity levels:
 
@@ -130,7 +136,7 @@ The project is designed to:
 The project uses the **U.S. Accidents** dataset published on Kaggle by Sobhan Moosavi.
 
 - **Dataset page:** [U.S. Accidents on Kaggle](https://www.kaggle.com/datasets/sobhanmoosavi/us-accidents)
-- **Time coverage:** 2016Ã¢â‚¬â€œ2023
+- **Time coverage:** 2016ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“2023
 - **Raw observations:** 7,728,394
 - **Raw columns:** 46
 - **Target:** `Severity`
@@ -238,11 +244,11 @@ No fully duplicated rows or duplicated IDs were found.
 
 The following columns are removed:
 
-- `Country` Ã¢â‚¬â€ single-value field
-- `End_Lat` and `End_Lng` Ã¢â‚¬â€ approximately 44% missing
-- `Wind_Chill(F)` Ã¢â‚¬â€ high missingness and overlap with temperature
-- `Description` Ã¢â‚¬â€ unstructured text not modeled in this version
-- `Turning_Loop` Ã¢â‚¬â€ no useful variation
+- `Country` ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â single-value field
+- `End_Lat` and `End_Lng` ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â approximately 44% missing
+- `Wind_Chill(F)` ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â high missingness and overlap with temperature
+- `Description` ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â unstructured text not modeled in this version
+- `Turning_Loop` ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â no useful variation
 
 The workflow also:
 
@@ -471,8 +477,8 @@ Random Forest performed almost identically while using a smaller modeling sample
 
 ```text
 .
-Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ US_Accident_version4.ipynb   # Complete analysis and modeling notebook
-Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ README.md                    # Project overview, methodology, and results
+ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ US_Accident_version4.ipynb   # Complete analysis and modeling notebook
+ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ README.md                    # Project overview, methodology, and results
 ```
 
 The raw and processed datasets are intentionally excluded because of their size. They can be downloaded or regenerated through the notebook.
@@ -569,7 +575,7 @@ The current notebook contains Google Colab and Google Drive paths such as `/cont
 - Intermediate datasets are stored in Parquet format.
 - The selected LightGBM model is saved with Joblib.
 - The notebook is intended to be executed sequentially.
-- Depending on runtime resources, a complete execution may take approximately 35Ã¢â‚¬â€œ60 minutes or longer.
+- Depending on runtime resources, a complete execution may take approximately 35ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“60 minutes or longer.
 - Model timing results are environment-dependent and should not be treated as hardware-independent benchmarks.
 
 ---
@@ -662,7 +668,7 @@ The project predicts patterns in historical records; it does not establish causa
 - Alejandro Gomez
 
 **Instructor:** Yuxiao (James) Huang  
-**Course:** DATS 6202-10 Ã¢â‚¬â€ Machine Learning I, Spring 2026  
+**Course:** DATS 6202-10 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Machine Learning I, Spring 2026  
 **Institution:** George Washington University
 
 ---
