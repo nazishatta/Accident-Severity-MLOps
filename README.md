@@ -16,13 +16,11 @@ short_description: 'ML-powered API and interactive demo predicting U.S. traffic 
 **[Live Demo: Try the deployed model here](https://huggingface.co/spaces/Nazishatta/accident-severity-mlops)**
 
 
-**[Live Demo: Try the deployed model here](https://huggingface.co/spaces/Nazishatta/accident-severity-mlops)**
-
 
 An end-to-end machine learning study for predicting the severity of traffic accidents in the United States using historical accident, weather, location, road-infrastructure, and time-based features.
 
 > **Project status:** Research and academic prototype  
-> **Course:** DATS 6202-10 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Machine Learning I, Spring 2026  
+> **Course:** DATS 6202-10 - Machine Learning I, Spring 2026  
 > **Institution:** George Washington University
 
 ---
