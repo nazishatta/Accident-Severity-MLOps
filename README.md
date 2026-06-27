@@ -6,32 +6,24 @@ colorTo: gray
 sdk: docker
 pinned: false
 license: mit
-short_description: 'ML-powered API and interactive demo predicting U.S. traffic '
+short_description: 'ML-powered API and interactive demo predicting U.S. traffic severity'
 ---
-
-
 
 # U.S. Accident Severity Prediction Using Machine Learning
 
 **[Live Demo: Try the deployed model here](https://huggingface.co/spaces/Nazishatta/accident-severity-mlops)**
 
-
-
 An end-to-end machine learning study for predicting the severity of traffic accidents in the United States using historical accident, weather, location, road-infrastructure, and time-based features.
 
-> **Project status:** Research and academic prototype  
-> **Course:** DATS 6202-10 - Machine Learning I, Spring 2026  
+> **Project status:** Research and academic prototype
+> **Course:** DATS 6202-10 - Machine Learning I, Spring 2026
 > **Institution:** George Washington University
 
 ---
 
-
 ## Production MLOps Deployment
 
-This research project has since been extended into a fully deployed, production-style MLOps
-pipeline, built independently by Nazish Atta as a solo follow-on project. The original modeling work above (Logistic Regression, Random Forest, LightGBM, MLP comparison) was a team effort; the MLOps pipeline, deployment, and automation described below were designed and built independently.
-
-**[Live Demo: Try the model here](https://huggingface.co/spaces/Nazishatta/accident-severity-mlops)**
+This research project has since been extended into a fully deployed, production-style MLOps pipeline, built independently by Nazish Atta as a solo follow-on project. The original modeling work below (Logistic Regression, Random Forest, LightGBM, MLP comparison) was a team effort; the MLOps pipeline, deployment, and automation described here were designed and built independently.
 
 ### Deployment Architecture
 
@@ -45,9 +37,10 @@ pipeline, built independently by Nazish Atta as a solo follow-on project. The or
 - Live public deployment on Hugging Face Spaces
 - GitHub Actions CI/CD pipeline for automatic testing and deployment
 
-See the src/ folder and app/ folder for implementation details.
+See the `src/` folder and `app/` folder for implementation details.
 
 ---
+
 ## Table of Contents
 
 - [Project Overview](#project-overview)
@@ -98,7 +91,7 @@ The final comparison includes Logistic Regression, Random Forest, LightGBM, and 
 
 ## Problem Statement
 
-Given the recorded conditions of a traffic accidentÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Âincluding location, time, weather, road characteristics, and related contextual variablesÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Âpredict its reported severity class.
+Given the recorded conditions of a traffic accident, including location, time, weather, road characteristics, and related contextual variables, predict its reported severity class.
 
 The target variable contains four severity levels:
 
@@ -118,7 +111,7 @@ The classification problem is challenging because the target distribution is str
 The project is designed to:
 
 1. Build a reliable processing workflow for a multi-million-row traffic dataset.
-2. identify missing values, invalid timestamps, duplicate records, and unrealistic numeric values.
+2. Identify missing values, invalid timestamps, duplicate records, and unrealistic numeric values.
 3. Engineer useful temporal and behavioral features from accident timestamps.
 4. Explore geographic, temporal, weather, and road-related accident patterns.
 5. Compare linear, tree-based, gradient-boosting, and neural-network classifiers.
@@ -134,7 +127,7 @@ The project is designed to:
 The project uses the **U.S. Accidents** dataset published on Kaggle by Sobhan Moosavi.
 
 - **Dataset page:** [U.S. Accidents on Kaggle](https://www.kaggle.com/datasets/sobhanmoosavi/us-accidents)
-- **Time coverage:** 2016ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“2023
+- **Time coverage:** 2016-2023
 - **Raw observations:** 7,728,394
 - **Raw columns:** 46
 - **Target:** `Severity`
@@ -242,11 +235,11 @@ No fully duplicated rows or duplicated IDs were found.
 
 The following columns are removed:
 
-- `Country` ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â single-value field
-- `End_Lat` and `End_Lng` ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â approximately 44% missing
-- `Wind_Chill(F)` ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â high missingness and overlap with temperature
-- `Description` ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â unstructured text not modeled in this version
-- `Turning_Loop` ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â no useful variation
+- `Country` - single-value field
+- `End_Lat` and `End_Lng` - approximately 44% missing
+- `Wind_Chill(F)` - high missingness and overlap with temperature
+- `Description` - unstructured text not modeled in this version
+- `Turning_Loop` - no useful variation
 
 The workflow also:
 
@@ -475,20 +468,25 @@ Random Forest performed almost identically while using a smaller modeling sample
 
 ```text
 .
-ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ US_Accident_version4.ipynb   # Complete analysis and modeling notebook
-ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ README.md                    # Project overview, methodology, and results
+|-- US_Accident_version4.ipynb   # Complete analysis and modeling notebook
+|-- US_Accident_version5_mlops.ipynb   # MLflow tracking and registry validation
+|-- app/                          # FastAPI backend
+|-- src/                          # DVC pipeline scripts (data prep, model registry)
+|-- models/                       # Trained model and label encoders
+|-- streamlit_app.py              # Streamlit frontend
+|-- Dockerfile                    # Container build instructions
+|-- .github/workflows/            # CI/CD pipeline
+`-- README.md                     # Project overview, methodology, and results
 ```
 
 The raw and processed datasets are intentionally excluded because of their size. They can be downloaded or regenerated through the notebook.
-
-A future modular version may separate reusable code, reports, model artifacts, and figures into dedicated folders.
 
 ---
 
 ## Technology Stack
 
 - **Python**
-- **Google Colab**
+- **Google Colab / Kaggle Notebooks**
 - **pandas**
 - **NumPy**
 - **Matplotlib**
@@ -498,7 +496,13 @@ A future modular version may separate reusable code, reports, model artifacts, a
 - **KaggleHub**
 - **Joblib**
 - **PyArrow / Parquet**
-- **Google Drive** for intermediate artifact storage
+- **MLflow**
+- **DVC**
+- **FastAPI**
+- **Streamlit**
+- **Docker**
+- **GitHub Actions**
+- **Hugging Face Spaces**
 
 ---
 
@@ -516,15 +520,6 @@ The notebook was designed for Google Colab and processes a very large dataset. A
 4. Approve Google Drive access when prompted.
 5. Allow `kagglehub` to download the dataset.
 6. Run the data-preparation, analysis, and model-training sections in sequence.
-
-The notebook saves these intermediate artifacts to Google Drive:
-
-```text
-df_raw.parquet
-df_cleaned.parquet
-df_features.parquet
-lgbm_best.pkl
-```
 
 ### Option 2: Local Jupyter Environment
 
@@ -553,15 +548,9 @@ python -m pip install --upgrade pip
 pip install pandas numpy matplotlib seaborn scikit-learn lightgbm kagglehub joblib pyarrow jupyter
 ```
 
-Start Jupyter:
+### Option 3: Try the Live Deployment
 
-```bash
-jupyter notebook
-```
-
-### Local-Execution Note
-
-The current notebook contains Google Colab and Google Drive paths such as `/content/drive/MyDrive/`. These cells must be adapted before running locally.
+No setup required. Visit the [live demo](https://huggingface.co/spaces/Nazishatta/accident-severity-mlops), fill in the form, and get a real-time prediction.
 
 ---
 
@@ -571,9 +560,8 @@ The current notebook contains Google Colab and Google Drive paths such as `/cont
 - Train/test splits are stratified by severity.
 - Hyperparameter searches use weighted F1-score.
 - Intermediate datasets are stored in Parquet format.
-- The selected LightGBM model is saved with Joblib.
-- The notebook is intended to be executed sequentially.
-- Depending on runtime resources, a complete execution may take approximately 35ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“60 minutes or longer.
+- The selected LightGBM model is saved with Joblib and registered in MLflow.
+- Depending on runtime resources, a complete execution may take approximately 35-60 minutes or longer.
 - Model timing results are environment-dependent and should not be treated as hardware-independent benchmarks.
 
 ---
@@ -648,26 +636,25 @@ The project predicts patterns in historical records; it does not establish causa
 - Expand hyperparameter optimization.
 - Add macro F1, balanced accuracy, Matthews correlation coefficient, and precision-recall curves.
 - Tune decision thresholds for rare classes.
-- Compare class weighting with SMOTE or other resampling strategies.
 - Add probability calibration and uncertainty analysis.
 - Evaluate performance by state, year, weather condition, and urban/rural region.
-- Add drift and fairness assessments.
-- Build reusable preprocessing and inference pipelines.
-- Save preprocessing encoders together with the final model.
-- Add automated tests and a reproducible dependency file.
-- Create an interactive analysis dashboard only after the modeling pipeline is modularized and validated.
+- Add a brief AWS ECR/ASG/ALB scaling test, documented for evidence, without running it continuously.
 
 ---
 
 ## Team
 
+**Original model training and research:**
 - Ilgaz Kusku
 - Nazish Atta
 - Alejandro Gomez
 
-**Instructor:** Yuxiao (James) Huang  
-**Course:** DATS 6202-10 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Machine Learning I, Spring 2026  
+**Instructor:** Yuxiao (James) Huang
+**Course:** DATS 6202-10 - Machine Learning I, Spring 2026
 **Institution:** George Washington University
+
+**Production MLOps pipeline, deployment, and CI/CD automation** (independent solo work, built on top of the team's model training above):
+- Nazish Atta
 
 ---
 
