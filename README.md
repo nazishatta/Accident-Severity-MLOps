@@ -1,6 +1,6 @@
 ---
 title: Accident Severity Mlops
-emoji: ⚡
+emoji: âš¡
 colorFrom: green
 colorTo: gray
 sdk: docker
@@ -16,11 +16,34 @@ short_description: 'ML-powered API and interactive demo predicting U.S. traffic 
 An end-to-end machine learning study for predicting the severity of traffic accidents in the United States using historical accident, weather, location, road-infrastructure, and time-based features.
 
 > **Project status:** Research and academic prototype  
-> **Course:** DATS 6202-10 — Machine Learning I, Spring 2026  
+> **Course:** DATS 6202-10 â€” Machine Learning I, Spring 2026  
 > **Institution:** George Washington University
 
 ---
 
+
+## Production MLOps Deployment
+
+This research project has since been extended into a fully deployed, production-style MLOps
+pipeline, built independently as a follow-on to the original coursework above.
+
+**[Live Demo: Try the model here](https://huggingface.co/spaces/Nazishatta/accident-severity-mlops)**
+
+### Deployment Architecture
+
+![MLOps deployment architecture](assets/architecture_diagram.svg)
+
+**What was added:**
+- MLflow experiment tracking and model registry (LightGBM promoted to production)
+- FastAPI backend serving real-time predictions with persisted label encoders
+- Streamlit frontend for non-technical users
+- Dockerized deployment (FastAPI + Streamlit in a single container)
+- Live public deployment on Hugging Face Spaces
+- GitHub Actions CI/CD pipeline for automatic testing and deployment
+
+See the src/ folder and app/ folder for implementation details.
+
+---
 ## Table of Contents
 
 - [Project Overview](#project-overview)
@@ -71,7 +94,7 @@ The final comparison includes Logistic Regression, Random Forest, LightGBM, and 
 
 ## Problem Statement
 
-Given the recorded conditions of a traffic accident—including location, time, weather, road characteristics, and related contextual variables—predict its reported severity class.
+Given the recorded conditions of a traffic accidentâ€”including location, time, weather, road characteristics, and related contextual variablesâ€”predict its reported severity class.
 
 The target variable contains four severity levels:
 
@@ -107,7 +130,7 @@ The project is designed to:
 The project uses the **U.S. Accidents** dataset published on Kaggle by Sobhan Moosavi.
 
 - **Dataset page:** [U.S. Accidents on Kaggle](https://www.kaggle.com/datasets/sobhanmoosavi/us-accidents)
-- **Time coverage:** 2016–2023
+- **Time coverage:** 2016â€“2023
 - **Raw observations:** 7,728,394
 - **Raw columns:** 46
 - **Target:** `Severity`
@@ -215,11 +238,11 @@ No fully duplicated rows or duplicated IDs were found.
 
 The following columns are removed:
 
-- `Country` — single-value field
-- `End_Lat` and `End_Lng` — approximately 44% missing
-- `Wind_Chill(F)` — high missingness and overlap with temperature
-- `Description` — unstructured text not modeled in this version
-- `Turning_Loop` — no useful variation
+- `Country` â€” single-value field
+- `End_Lat` and `End_Lng` â€” approximately 44% missing
+- `Wind_Chill(F)` â€” high missingness and overlap with temperature
+- `Description` â€” unstructured text not modeled in this version
+- `Turning_Loop` â€” no useful variation
 
 The workflow also:
 
@@ -448,8 +471,8 @@ Random Forest performed almost identically while using a smaller modeling sample
 
 ```text
 .
-├── US_Accident_version4.ipynb   # Complete analysis and modeling notebook
-└── README.md                    # Project overview, methodology, and results
+â”œâ”€â”€ US_Accident_version4.ipynb   # Complete analysis and modeling notebook
+â””â”€â”€ README.md                    # Project overview, methodology, and results
 ```
 
 The raw and processed datasets are intentionally excluded because of their size. They can be downloaded or regenerated through the notebook.
@@ -546,7 +569,7 @@ The current notebook contains Google Colab and Google Drive paths such as `/cont
 - Intermediate datasets are stored in Parquet format.
 - The selected LightGBM model is saved with Joblib.
 - The notebook is intended to be executed sequentially.
-- Depending on runtime resources, a complete execution may take approximately 35–60 minutes or longer.
+- Depending on runtime resources, a complete execution may take approximately 35â€“60 minutes or longer.
 - Model timing results are environment-dependent and should not be treated as hardware-independent benchmarks.
 
 ---
@@ -639,7 +662,7 @@ The project predicts patterns in historical records; it does not establish causa
 - Alejandro Gomez
 
 **Instructor:** Yuxiao (James) Huang  
-**Course:** DATS 6202-10 — Machine Learning I, Spring 2026  
+**Course:** DATS 6202-10 â€” Machine Learning I, Spring 2026  
 **Institution:** George Washington University
 
 ---
@@ -657,7 +680,7 @@ Before redistributing any data, review the dataset page for its current terms, c
 The results in this repository reflect one experimental workflow, selected samples, defined preprocessing decisions, and a specific runtime environment. They should not be interpreted as a production-ready traffic-severity forecasting system or as evidence that the identified variables cause accident severity.
 ---
 title: Accident Severity Mlops
-emoji: ⚡
+emoji: âš¡
 colorFrom: green
 colorTo: gray
 sdk: docker
