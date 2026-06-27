@@ -8,3 +8,6 @@ mlruns/
 
 
 claude.md
+
+data_cache/
+tableau_exports/
