@@ -147,6 +147,8 @@ The source data includes:
 
 The raw dataset is not stored in this repository because of its size. The notebook downloads it programmatically.
 
+**[View the MLflow tracking and model registry notebook on Kaggle](https://www.kaggle.com/code/nazishatta/notebook59e8b2c916)** -- validates the full data cleaning, feature engineering, and 4-model training pipeline against the complete 7.7M-row dataset.
+
 ### Initial Severity Distribution
 
 | Severity | Records | Share |
