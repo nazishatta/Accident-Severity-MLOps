@@ -1,6 +1,6 @@
 ---
 title: Accident Severity Mlops
-emoji: âš¡
+emoji: zap
 colorFrom: green
 colorTo: gray
 sdk: docker
@@ -16,7 +16,7 @@ short_description: 'ML-powered API and interactive demo predicting U.S. traffic 
 An end-to-end machine learning study for predicting the severity of traffic accidents in the United States using historical accident, weather, location, road-infrastructure, and time-based features.
 
 > **Project status:** Research and academic prototype  
-> **Course:** DATS 6202-10 â€” Machine Learning I, Spring 2026  
+> **Course:** DATS 6202-10 Ã¢â‚¬â€ Machine Learning I, Spring 2026  
 > **Institution:** George Washington University
 
 ---
@@ -94,7 +94,7 @@ The final comparison includes Logistic Regression, Random Forest, LightGBM, and 
 
 ## Problem Statement
 
-Given the recorded conditions of a traffic accidentâ€”including location, time, weather, road characteristics, and related contextual variablesâ€”predict its reported severity class.
+Given the recorded conditions of a traffic accidentÃ¢â‚¬â€including location, time, weather, road characteristics, and related contextual variablesÃ¢â‚¬â€predict its reported severity class.
 
 The target variable contains four severity levels:
 
@@ -130,7 +130,7 @@ The project is designed to:
 The project uses the **U.S. Accidents** dataset published on Kaggle by Sobhan Moosavi.
 
 - **Dataset page:** [U.S. Accidents on Kaggle](https://www.kaggle.com/datasets/sobhanmoosavi/us-accidents)
-- **Time coverage:** 2016â€“2023
+- **Time coverage:** 2016Ã¢â‚¬â€œ2023
 - **Raw observations:** 7,728,394
 - **Raw columns:** 46
 - **Target:** `Severity`
@@ -238,11 +238,11 @@ No fully duplicated rows or duplicated IDs were found.
 
 The following columns are removed:
 
-- `Country` â€” single-value field
-- `End_Lat` and `End_Lng` â€” approximately 44% missing
-- `Wind_Chill(F)` â€” high missingness and overlap with temperature
-- `Description` â€” unstructured text not modeled in this version
-- `Turning_Loop` â€” no useful variation
+- `Country` Ã¢â‚¬â€ single-value field
+- `End_Lat` and `End_Lng` Ã¢â‚¬â€ approximately 44% missing
+- `Wind_Chill(F)` Ã¢â‚¬â€ high missingness and overlap with temperature
+- `Description` Ã¢â‚¬â€ unstructured text not modeled in this version
+- `Turning_Loop` Ã¢â‚¬â€ no useful variation
 
 The workflow also:
 
@@ -471,8 +471,8 @@ Random Forest performed almost identically while using a smaller modeling sample
 
 ```text
 .
-â”œâ”€â”€ US_Accident_version4.ipynb   # Complete analysis and modeling notebook
-â””â”€â”€ README.md                    # Project overview, methodology, and results
+Ã¢â€Å“Ã¢â€â‚¬Ã¢â€â‚¬ US_Accident_version4.ipynb   # Complete analysis and modeling notebook
+Ã¢â€â€Ã¢â€â‚¬Ã¢â€â‚¬ README.md                    # Project overview, methodology, and results
 ```
 
 The raw and processed datasets are intentionally excluded because of their size. They can be downloaded or regenerated through the notebook.
@@ -569,7 +569,7 @@ The current notebook contains Google Colab and Google Drive paths such as `/cont
 - Intermediate datasets are stored in Parquet format.
 - The selected LightGBM model is saved with Joblib.
 - The notebook is intended to be executed sequentially.
-- Depending on runtime resources, a complete execution may take approximately 35â€“60 minutes or longer.
+- Depending on runtime resources, a complete execution may take approximately 35Ã¢â‚¬â€œ60 minutes or longer.
 - Model timing results are environment-dependent and should not be treated as hardware-independent benchmarks.
 
 ---
@@ -662,7 +662,7 @@ The project predicts patterns in historical records; it does not establish causa
 - Alejandro Gomez
 
 **Instructor:** Yuxiao (James) Huang  
-**Course:** DATS 6202-10 â€” Machine Learning I, Spring 2026  
+**Course:** DATS 6202-10 Ã¢â‚¬â€ Machine Learning I, Spring 2026  
 **Institution:** George Washington University
 
 ---
@@ -678,15 +678,3 @@ Before redistributing any data, review the dataset page for its current terms, c
 ## Disclaimer
 
 The results in this repository reflect one experimental workflow, selected samples, defined preprocessing decisions, and a specific runtime environment. They should not be interpreted as a production-ready traffic-severity forecasting system or as evidence that the identified variables cause accident severity.
----
-title: Accident Severity Mlops
-emoji: âš¡
-colorFrom: green
-colorTo: gray
-sdk: docker
-pinned: false
-license: mit
-short_description: 'ML-powered API and interactive demo predicting U.S. traffic '
----
-
-Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
