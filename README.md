@@ -1,3 +1,16 @@
+---
+title: Accident Severity Mlops
+emoji: ⚡
+colorFrom: green
+colorTo: gray
+sdk: docker
+pinned: false
+license: mit
+short_description: 'ML-powered API and interactive demo predicting U.S. traffic '
+---
+
+
+
 # U.S. Accident Severity Prediction Using Machine Learning
 
 An end-to-end machine learning study for predicting the severity of traffic accidents in the United States using historical accident, weather, location, road-infrastructure, and time-based features.
@@ -642,3 +655,15 @@ Before redistributing any data, review the dataset page for its current terms, c
 ## Disclaimer
 
 The results in this repository reflect one experimental workflow, selected samples, defined preprocessing decisions, and a specific runtime environment. They should not be interpreted as a production-ready traffic-severity forecasting system or as evidence that the identified variables cause accident severity.
+---
+title: Accident Severity Mlops
+emoji: ⚡
+colorFrom: green
+colorTo: gray
+sdk: docker
+pinned: false
+license: mit
+short_description: 'ML-powered API and interactive demo predicting U.S. traffic '
+---
+
+Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
