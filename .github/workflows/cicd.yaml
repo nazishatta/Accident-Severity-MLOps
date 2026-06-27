@@ -21,3 +21,21 @@ jobs:
 
       - name: Check app imports correctly
         run: python -c "import app.main"
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Push to Hugging Face Spaces
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }}
+        run: |
+          git config user.email "actions@github.com"
+          git config user.name "GitHub Actions"
+          git remote add huggingface https://Nazishatta:${HF_TOKEN}@huggingface.co/spaces/Nazishatta/accident-severity-mlops
+          git push huggingface main --force
